@@ -109,3 +109,41 @@ and no surprise an easy to see LOOKATME folder is here so we just need to read w
 and now https://192.168.1.74/forum/templates_c/pogger.php gives us
 
     lmezard:G!@M6f4Eatau{sF"
+
+## Step 6: The ftp server
+
+Since we can't login via ssh with those id, we will connect to the ftp server
+
+to do so:
+```
+    pwd>ftp 192.168.1.74
+
+    Connected to 192.168.1.74.
+    220 Welcome on this server
+    200 Always in UTF8 mode.
+    User (192.168.1.74:(none)): lmezard
+    331 Please specify the password.
+    Password: G!@M6f4Eatau{sF"
+    230 Login successful.
+```
+
+We'll use "dir" to list the file we have access to et get to retrieve them on our host.
+
+The README file say that we'll get the ssh password of the user laurie using the "fun" file
+
+So we have to tar -xf the file and get a bunch of .pcap files
+
+## Fun's  solution
+
+So since we're on our host, we have the wonderfull tool VSC, and we dont have to work on vim. so when you open anyway using vsc's built-in decoder, we'll get a lot of thing
+
+and while scrolling you'll spot some getmeX() functions that you will find in random .pcap files and using the comment's number + 1 you'll find the letter corresponding
+
+now that you have your 12 letters password hash it in sha-256 and you have your password for laurie
+after retrieving  all the letter we end up with :
+```
+Iheartpwnage
+
+in SHA-256:
+    330b845f32185747e4f8ca15d40ca59796035c89ea809fb5d30f4da83ecf45a4
+```
